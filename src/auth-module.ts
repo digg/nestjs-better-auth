@@ -126,7 +126,7 @@ export class AuthModule
 		}
 
 		if (!this.options.disableBodyParser) {
-			consumer.apply(SkipBodyParsingMiddleware(basePath)).forRoutes("*path");
+			consumer.apply(SkipBodyParsingMiddleware(basePath)).forRoutes("*");
 		}
 
 		const handler = toNodeHandler(this.options.auth);
@@ -137,9 +137,7 @@ export class AuthModule
 				}
 				return handler(req, res);
 			})
-			// little hack to ignore any global prefix
-			// for now i'll just not support a global prefix
-			.forRoutes(`${basePath}/*path`);
+			.forRoutes(`${basePath}/*`);
 		this.logger.log(`AuthModule initialized BetterAuth on '${basePath}/*'`);
 	}
 
