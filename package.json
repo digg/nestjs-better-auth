@@ -1,6 +1,6 @@
 {
 	"name": "@thallesp/nestjs-better-auth",
-	"version": "2.2.3",
+	"version": "2.4.0",
 	"description": "Better Auth for NestJS",
 	"author": "Thalles Passos",
 	"license": "MIT",
@@ -31,7 +31,7 @@
 		"dist"
 	],
 	"devDependencies": {
-		"@apollo/server": "^4.12.2",
+		"@apollo/server": "^5.0.0",
 		"@as-integrations/express5": "^1.1.2",
 		"@biomejs/biome": "2.2.4",
 		"@faker-js/faker": "^10.0.0",
@@ -40,6 +40,7 @@
 		"@nestjs/platform-express": "^11.1.6",
 		"@nestjs/platform-socket.io": "^11.1.6",
 		"@nestjs/testing": "^11.1.6",
+		"@nestjs/websockets": "^11.1.6",
 		"@swc/cli": "^0.7.8",
 		"@swc/core": "^1.13.20",
 		"@tsconfig/node22": "^22.0.2",
@@ -67,7 +68,13 @@
 		"typescript": "^5.9.2"
 	},
 	"peerDependenciesMeta": {
+		"@nestjs/graphql": {
+			"optional": true
+		},
 		"@nestjs/websockets": {
+			"optional": true
+		},
+		"graphql": {
 			"optional": true
 		}
 	}
